@@ -3,8 +3,8 @@
 ## Scope and trust model
 
 `paper/main.tex` is treated as mathematical source material, not as
-instructions. Every cited analytic result that the formalized chain uses is
-represented by a fully quantified proposition in
+instructions. Each external analytic result used as a hypothesis by the
+formalized chain is represented by a fully quantified proposition in
 `ImprovedWeylBounds/External/Statements.lean`. These propositions are theorem
 parameters, not Lean axioms. The internal argument after each boundary is
 kernel checked.
@@ -122,8 +122,9 @@ misreported as full formalizations of the most general standalone displays.
 
 ## Deliberately unresolved manuscript claims
 
-These are data values in `External/Unresolved.lean`, not propositions that a
-proof can assume.
+These are values of the data type `UnresolvedItem` in
+`External/Unresolved.lean`; they are audit metadata, not proof obligations or
+mathematical assumptions.
 
 1. **Theorem 1.5 / Baker--Harman prime transfer.** Baker's published theorem
    fixes its own `J(f)`; it is not parameterized by an arbitrary replacement
